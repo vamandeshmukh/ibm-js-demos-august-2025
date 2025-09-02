@@ -62,10 +62,25 @@
 // const fun = () => console.log("fun function invoked.");
 // fun();
 
-// const addNums = (a, b) => { return a + b };
-// const addNums = (a, b) => a + b;
+// const getGstAmount1 = (amount) => { return amount * 0.18; };
+// const getGstAmount2 = (amount) => amount * 0.18;
+// const getGstAmount3 = amount => amount * 0.18;
 
-const getGstAmount1 = (amount) => { return amount * 0.18; };
-const getGstAmount2 = (amount) => amount * 0.18;
-const getGstAmount3 = amount => amount * 0.18;
+// const addNums = (a, b) => { return a + b };
+const addNums = (a, b) => a + b;
+
+let sum1 = addNums();
+let sum2 = addNums(10);
+let sum3 = addNums(10, 20);
+let sum4 = addNums(10, 20, 30);
+let sum5 = addNums("abc", "def");
+console.log(sum1);
+console.log(sum2);
+console.log(sum3);
+console.log(sum4);
+console.log(sum5);
+
+let num;
+console.log(num);
+console.log(typeof num);
 
