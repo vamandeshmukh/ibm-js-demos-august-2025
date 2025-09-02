@@ -115,11 +115,22 @@
 // addNums(10, 20);
 // // 
 
+// const employee = {
+//     firstName: "Sonu Pandey",
+//     getData1: () => { console.log(this.firstName); },
+//     getData2: function () { console.log(this.firstName); },
+// };
+
+// employee.getData1();
+// employee.getData2();
+
+
 const employee = {
     firstName: "Sonu Pandey",
-    getData1: () => { console.log(this.firstName); },
-    getData2: function () { console.log(this.firstName); }
+    getData: function () { console.log(this.firstName); },
+    updateData: function (newName) { this.firstName = newName; }
 };
 
-employee.getData1();
-employee.getData2();
+employee.getData();
+employee.updateData("Monu Reddy");
+employee.getData();
