@@ -101,6 +101,25 @@
 // console.log(sum1);
 
 
-const fun = () => console.log("fun function invoked.");
+// const fun = () => console.log("fun function invoked.");
+// let result = fun();
+// console.log(result);
 
-console.log(fun());
+// const addNums = (a, b = Date.now()) => {
+//     console.log(a);
+//     console.log(b);
+// };
+
+// addNums();
+// addNums(10);
+// addNums(10, 20);
+// // 
+
+const employee = {
+    firstName: "Sonu Pandey",
+    getData1: () => { console.log(this.firstName); },
+    getData2: function () { console.log(this.firstName); }
+};
+
+employee.getData1();
+employee.getData2();
