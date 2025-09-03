@@ -1,10 +1,13 @@
-
+ // ==================================
 // Problem of asynchronous JavaScript 
+// ==================================
 
 const getData = () => {
-    console.log("getData function invoked.");
-    return { city: "Bengaluru" };
+    setTimeout(() => {
+        return { city: "Bengaluru" };
+    }, 2000);
 };
 
 const data = getData();
 console.log(data.city);
+
