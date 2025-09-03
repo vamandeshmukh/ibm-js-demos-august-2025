@@ -55,31 +55,68 @@
 // 2. Rest and Spread Operators  ... 
 // -----------------------------
 
-const addNums = (...args) => { // rest parameters (varargs in java)  
-    let sum = 0;
-    for (const arg of args) {
-        sum += arg;
-    }
-    return sum;
-};
+// const addNums = (...args) => { // rest parameters (varargs in java)  
+//     let sum = 0;
+//     for (const arg of args) {
+//         sum += arg;
+//     }
+//     return sum;
+// };
 
-// console.log(addNums([10]));
-// console.log(addNums([10, 20]));
-// console.log(addNums([10, 20, 30]));
-// console.log(addNums([10, 20, 30, 40]));
+// // console.log(addNums([10]));
+// // console.log(addNums([10, 20]));
+// // console.log(addNums([10, 20, 30]));
+// // console.log(addNums([10, 20, 30, 40]));
 
-console.log(addNums(10));
-console.log(addNums(10, 20));
-console.log(addNums(10, 20, 30));
-console.log(addNums(10, 20, 30, 40));
+// console.log(addNums(10));
+// console.log(addNums(10, 20));
+// console.log(addNums(10, 20, 30));
+// console.log(addNums(10, 20, 30, 40));
 
+// const arr1 = [10, 20, 30];
+// const arr2 = arr1;
+// arr1[2] = 35;
+// arr2[1] = 25;
 
+// console.log(arr1);
+// console.log(arr2);
 
+// const arr1 = [10, 20, 30];
+// const arr2 = [...arr1];
+// arr1[2] = 35;
+// arr2[1] = 25;
 
+// console.log(arr1);
+// console.log(arr2);
 
+// -----------------------------
+// Array destructuring 
+// -----------------------------
 
+// const arr1 = [10, 20, 30];
+// const [a, b, c] = arr1;
+// console.log(a, b, c);
 
+// const arr1 = [10, 20, 30];
+// const [a, b] = arr1;
+// console.log(a, b);
 
+// const arr1 = [10, 20, 30];
+// const [a, b, c, d] = arr1;
+// console.log(a, b, c, d);
 
+// const arr1 = [10, 20, 30];
+// const [a, b, c, d] = [...arr1, 40];
+// console.log(a, b, c, d);
 
+// const arr1 = [10, 20, 30];
+// const [a, b, c, d] = [arr1, 40];
+// console.log(a, b, c, d);
 
+// const arr1 = [10, 20, 30, [40, 50, 60]];
+// const [a, b, c, [d, e, f]] = arr1;
+// console.log(a, b, c, d, e, f);
+
+const arr1 = [10, 20, 30];
+const [a, , c] = arr1;
+console.log(a, c);
