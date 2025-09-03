@@ -24,11 +24,33 @@
 
 // getData((data) => { console.log(data.city) });
 
-// ===================================
-// Solution 2 - Promise   
-// ===================================
+// ==========================================
+// Solution 2 - .then().catch() with Promise   
+// ==========================================
 // return new Promise((resolve, reject) => { });
 // fun().then(() => {}).catch(() => {});
+
+// const getData = () => {
+//     const isDataAvilable = false; // true // false 
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             if (isDataAvilable)
+//                 resolve({ city: "Bengaluru" });
+//             else
+//                 reject({ message: "Data not available" });
+//         }, 2000);
+//     });
+// }
+
+// getData()
+//     .then((response) => { console.log(response.city); })
+//     .catch((error) => { console.log(error.message); });
+
+
+
+// =====================================
+// Solution 3 - async await with Promise
+// =====================================
 
 const getData = () => {
     const isDataAvilable = false; // true // false 
@@ -42,12 +64,19 @@ const getData = () => {
     });
 }
 
-getData()
-    .then((response) => { console.log(response.city); })
-    .catch((error) => { console.log(error.message); });
+// const consumeData = async () => {
+//     const data = await getData();
+//     console.log(data.city);
+// };
+// consumeData();
 
-
-
-// ===================================
-// Solution 3 - async await
-// ===================================
+const consumeData = async () => {
+    try {
+        const data = await getData();
+        console.log(data.city);
+    }
+    catch {
+        console.log("Wrong!");
+    }
+};
+consumeData();
