@@ -12,12 +12,40 @@
 // console.log(eid); // 101
 // console.log(city); // Bengaluru
 
-const employee = {
-    id: 101, name: "Sonu", salary: 10.50
-};
+// const employee = {
+//     id: 101, name: "Sonu", salary: 10.50
+// };
 
-const { id, name, salary, department } = { ...employee };
+// const { id, name, salary, department } = { ...employee };
 
-console.log(id); 
-console.log(department); // 
+// console.log(id); 
+// console.log(department); // 
+
+
+// const employee = {
+//     id: 101, name: "Sonu", salary: 10.50
+// };
+
+// const department = employee.department;
+// console.log(employee.department); // 
+// console.log(department); // 
+
+// =========================
+// truthy falsy values in JS 
+// =========================
+
+// const employee = {
+//     id: 101, name: "Sonu", salary: 10.50
+// };
+
+
+const num = 10; // falsy => 0, '', null, undefined, false truthy => any other value  
+
+if (num) { // if num has a value == not undefined 
+    console.log("truthy");
+}
+else {
+    console.log("falsy");
+}
+
 
