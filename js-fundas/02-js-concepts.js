@@ -52,10 +52,10 @@
 
 
 // -----------------------------
-// 2. Rest and Spread Operators  ... 
+// 2. Rest and Spread Operators  ...
 // -----------------------------
 
-// const addNums = (...args) => { // rest parameters (varargs in java)  
+// const addNums = (...args) => { // rest parameters (varargs in java)
 //     let sum = 0;
 //     for (const arg of args) {
 //         sum += arg;
@@ -90,7 +90,7 @@
 // console.log(arr2);
 
 // -----------------------------
-// Array destructuring 
+// Array destructuring
 // -----------------------------
 
 // const arr1 = [10, 20, 30];
@@ -128,15 +128,49 @@
 // console.log(Maths);
 
 // -----------------------------
-// Object destructuring 
+// Object destructuring
 // -----------------------------
 
 
 
+// const employee = { id: 101, name: "Sonu", salary: 10.50 };
+// // const idValue = employee.id;
+// // console.log(idValue);
+// // const { id: eid, name: ename, salary: esal } = employee;
+// const { id, name, salary } = employee;
+// console.log(id, name, salary);
+
+// const employee = { id: 101, name: "Sonu", salary: 10.50 };
+// const { id, ...empData } = employee;
+// console.log(id, empData);
+
+// const employee = { id: 101, name: "Sonu", salary: 10.50 };
+// const { id, ...empData } = { ...employee, location: "Bengaluru" };
+// console.log(empData);
+
+// const marks = [98, 95, 96, 99, 97];
+// const [a, b, c, d, e] = marks;
+// console.log(a, b, c, d, e);
+
+//// 1. Pedict the outout
+const marks = [98, 95, 96, 99, 97];
+const [a, b, c, d, e] = [...marks];
+console.log(a, b, c, d, e);
+//// 2. Pedict the outout
+const marks2 = [98, 95, 96, 99, 97];
+const [...myMarks] = [...marks2];
+marks2[0] = 100;
+console.log(myMarks);
+//// 3. Pedict the outout
 const employee = { id: 101, name: "Sonu", salary: 10.50 };
-// const idValue = employee.id;
-// console.log(idValue);
-// const { id: eid, name: ename, salary: esal } = employee;
-const { id, name, salary } = employee;
-console.log(id, name, salary);
+const { ...empData } = { ...employee};
+employee.id = 102;
+console.log(empData);
+//// 4. Pedict the outout
+const employee2 = { id: 101, name: "Sonu", salary: 10.50 };
+const {empData2} = {employee2};
+employee2.id = 102;
+console.log(empData2);
+
+
 
