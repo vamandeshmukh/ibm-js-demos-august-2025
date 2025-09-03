@@ -52,17 +52,26 @@
 
 
 // -----------------------------
-// 2. Rest and Spread Operators
+// 2. Rest and Spread Operators  ... 
 // -----------------------------
 
+const addNums = (...args) => { // rest parameters (varargs in java)  
+    let sum = 0;
+    for (const arg of args) {
+        sum += arg;
+    }
+    return sum;
+};
 
-const addNums = (args) => { };
+// console.log(addNums([10]));
+// console.log(addNums([10, 20]));
+// console.log(addNums([10, 20, 30]));
+// console.log(addNums([10, 20, 30, 40]));
 
 console.log(addNums(10));
 console.log(addNums(10, 20));
 console.log(addNums(10, 20, 30));
 console.log(addNums(10, 20, 30, 40));
-
 
 
 
