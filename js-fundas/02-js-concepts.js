@@ -117,6 +117,26 @@
 // const [a, b, c, [d, e, f]] = arr1;
 // console.log(a, b, c, d, e, f);
 
-const arr1 = [10, 20, 30];
-const [a, , c] = arr1;
-console.log(a, c);
+// const arr1 = [10, 20, 30];
+// const [a, , c] = arr1;
+// console.log(a, c);
+
+// const getMarks = () => { return [98, 95, 99, 97, 96] };
+// const [Maths, Physics, Chemistry, English, Sanskrit] = getMarks();
+// console.log(Maths);
+// Maths = 100;
+// console.log(Maths);
+
+// -----------------------------
+// Object destructuring 
+// -----------------------------
+
+
+
+const employee = { id: 101, name: "Sonu", salary: 10.50 };
+// const idValue = employee.id;
+// console.log(idValue);
+// const { id: eid, name: ename, salary: esal } = employee;
+const { id, name, salary } = employee;
+console.log(id, name, salary);
+
