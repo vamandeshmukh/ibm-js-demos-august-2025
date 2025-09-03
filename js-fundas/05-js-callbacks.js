@@ -24,11 +24,11 @@
 
 // getData((data) => { console.log(data.city) });
 
-// ==========================================
-// Solution 2 - .then().catch() with Promise   
-// ==========================================
-// return new Promise((resolve, reject) => { });
-// fun().then(() => {}).catch(() => {});
+// // ==========================================
+// // Solution 2 - .then().catch() with Promise   
+// // ==========================================
+// // return new Promise((resolve, reject) => { });
+// // fun().then(() => {}).catch(() => {});
 
 // const getData = () => {
 //     const isDataAvilable = false; // true // false 
@@ -48,12 +48,12 @@
 
 
 
-// =====================================
-// Solution 3 - async await with Promise
-// =====================================
+// // =====================================
+// // Solution 3 - async await with Promise
+// // =====================================
 
 const getData = () => {
-    const isDataAvilable = false; // true // false 
+    const isDataAvilable = false; // true // false
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             if (isDataAvilable)
@@ -64,19 +64,15 @@ const getData = () => {
     });
 }
 
-// const consumeData = async () => {
-//     const data = await getData();
-//     console.log(data.city);
-// };
-// consumeData();
-
 const consumeData = async () => {
     try {
         const data = await getData();
         console.log(data.city);
+        return data;
     }
-    catch {
-        console.log("Wrong!");
+    catch (error) {
+        console.log(error.message);
     }
 };
+
 consumeData();
