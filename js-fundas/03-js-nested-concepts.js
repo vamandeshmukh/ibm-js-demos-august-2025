@@ -40,13 +40,37 @@
 
 // employee.salary && employee.salary > 10
 
-let num; // falsy => 0, '', null, undefined, false truthy => any other value  
+// let num; // falsy => 0, '', null, undefined, false truthy => any other value  
 
-if (num) { // if num has a value == not undefined 
-    console.log("truthy");
-}
-else {
-    console.log("falsy");
-}
+// if (num) { // if num has a value == if num is undefined 
+//     console.log("truthy");
+// }
+// else {
+//     console.log("falsy");
+// }
 
+// const employee = {
+//     id: 101, name: "Sonu", salary: 10.50
+// };
 
+// if (employee.city && employee.city == "Bengaluru") {
+//     console.log(employee.city);
+// }
+// else {
+//     console.log(employee);
+// }
+
+// users = [{ id: 101, name: "Sonu", salary: 10.50 }, { id: 102, name: "Monu" }]
+
+// const salary = users[1]?.salary;
+// console.log(salary);
+
+// let num1 = 10;
+// let num2 = "10";
+
+// if (num1 === num2) {
+//     console.log("same");
+// }
+// else {
+//     console.log("not same");
+// }
