@@ -38,8 +38,9 @@
 //     id: 101, name: "Sonu", salary: 10.50
 // };
 
+// employee.salary && employee.salary > 10
 
-const num = 10; // falsy => 0, '', null, undefined, false truthy => any other value  
+let num; // falsy => 0, '', null, undefined, false truthy => any other value  
 
 if (num) { // if num has a value == not undefined 
     console.log("truthy");
