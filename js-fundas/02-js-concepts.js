@@ -152,25 +152,25 @@
 // const [a, b, c, d, e] = marks;
 // console.log(a, b, c, d, e);
 
-//// 1. Pedict the outout
-const marks = [98, 95, 96, 99, 97];
-const [a, b, c, d, e] = [...marks];
-console.log(a, b, c, d, e);
-//// 2. Pedict the outout
-const marks2 = [98, 95, 96, 99, 97];
-const [...myMarks] = [...marks2];
-marks2[0] = 100;
-console.log(myMarks);
-//// 3. Pedict the outout
-const employee = { id: 101, name: "Sonu", salary: 10.50 };
-const { ...empData } = { ...employee};
-employee.id = 102;
-console.log(empData);
-//// 4. Pedict the outout
-const employee2 = { id: 101, name: "Sonu", salary: 10.50 };
-const {empData2} = {employee2};
-employee2.id = 102;
-console.log(empData2);
+// //// 1. Pedict the outout
+// const marks = [98, 95, 96, 99, 97];
+// const [a, b, c, d, e] = [...marks];
+// console.log(a, b, c, d, e);
+// //// 2. Pedict the outout
+// const marks2 = [98, 95, 96, 99, 97];
+// const [...myMarks] = [...marks2];
+// marks2[0] = 100;
+// console.log(myMarks);
+// //// 3. Pedict the outout
+// const employee = { id: 101, name: "Sonu", salary: 10.50 };
+// const { ...empData } = { ...employee };
+// employee.id = 102;
+// console.log(empData);
+// //// 4. Pedict the outout
+// const employee2 = { id: 101, name: "Sonu", salary: 10.50 };
+// const { empData2 } = { employee2 }; // const {id, name, salary} = employee2;
+// employee2.id = 102;
+// console.log(empData2);
 
 
 
