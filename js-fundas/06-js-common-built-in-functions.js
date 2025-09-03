@@ -33,7 +33,6 @@
 // const userOne = users.find(u => u.username === "monu");
 // console.log(userOne);
 
-
 // // ======================
 // // Object functions in JS
 // // ======================
@@ -70,12 +69,12 @@
 
 const str = "  Hello world!  ";
 console.log(str);
-console.log(str.length); 
-console.log(str.toUpperCase()); 
-console.log(str.toLowerCase()); 
-console.log(str.trim()); 
-console.log(str.trimStart()); 
-console.log(str.trimEnd()); 
+console.log(str.length);
+console.log(str.toUpperCase());
+console.log(str.toLowerCase());
+console.log(str.trim());
+console.log(str.trimStart());
+console.log(str.trimEnd());
 console.log(str.charAt(2));
 
 
