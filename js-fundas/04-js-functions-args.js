@@ -38,7 +38,10 @@
 
 // fun((arg2) => { console.log(arg2, ": anonymous function invoked."); });
 
-// setTimeout(() => {}, timeout);
+
+// using settimeout 
+
+// setTimeout(() => {}, timeout); // syntax 
 
 // console.log("one");
 
