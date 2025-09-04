@@ -8,7 +8,6 @@ export default class UserEntity {
   phone;
   role;
 
-
   constructor({ id = null, name, email, phone, role }) {
     this.id = id;
     this.name = name;

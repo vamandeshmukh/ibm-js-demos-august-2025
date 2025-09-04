@@ -8,6 +8,7 @@ export default class UserService {
 
   async getUserProfile(id) {
     console.log(id);
+    // business logic
     return await userRepository.findById(id);
   }
 }
