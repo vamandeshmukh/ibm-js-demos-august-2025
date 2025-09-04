@@ -3,6 +3,7 @@ console.log("mongodemo.js");
 import mongoose from 'mongoose';
 
 export const dbcon = () => {
+
     const Employee = mongoose.model("Employee", { name: String, phone: String, email: String, });
 
     mongoose.connect('mongodb://localhost:27017/ibm-demo')
@@ -14,7 +15,9 @@ export const dbcon = () => {
 
 
 // export const dbcon = async () => {
+
 //     const Employee = mongoose.model("Employee", { name: String, phone: String, email: String, });
+
 //     try {
 //         await mongoose.connect('mongodb://localhost:27017/ibm-demo');
 //         const employees = await Employee.find();
