@@ -1,22 +1,17 @@
 {
-  "name": "ride-app",
+  "name": "ride-hailing-app",
   "version": "1.0.0",
-  "description": "NodeJS demo project for IBM Bengaluru trainees August 2025",
-  "main": "src/app.js",
+  "type": "module",
+  "main": "app.js",
   "scripts": {
     "start": "node src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/app.js"
   },
-  "keywords": [],
-  "author": "Vaman Deshmukh",
-  "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
-    "sequelize": "^6.37.3",
-    "mysql2": "^3.9.7",
-    "mongoose": "^8.5.2",
-    "cors": "^2.8.5",
-    "axios": "1.11.0"
+    "mysql2": "^3.9.7"
   },
-  "type": "module"
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
 }
