@@ -28,6 +28,6 @@ export default class RatingRepository {
         return await RatingModel.find({ rideId }).lean();
     }
 
-
 }
+
 

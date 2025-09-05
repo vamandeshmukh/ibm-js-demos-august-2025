@@ -1,5 +1,5 @@
 {
-  "name": "ride-hailing-app",
+  "name": "ibm-ride-app",
   "version": "1.0.0",
   "type": "module",
   "main": "app.js",
@@ -12,7 +12,9 @@
     "mongoose": "8.18.0",
     "sequelize": "6.37.7",
     "mysql2": "^3.9.7",
-    "dotenv": "17.2.2"
+    "dotenv": "17.2.2",
+    "swagger-ui-express": "5.0.1",
+    "swagger-jsdoc": "6.2.8"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
