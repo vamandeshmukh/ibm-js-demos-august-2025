@@ -15,15 +15,17 @@ const swaggerDefinition = {
         version: "1.0.0",
         description: "API documentation with Swagger UI",
     },
-    servers: [{ 
-        url: "http://localhost:3000",
-        description: "Development server" 
-    }],
+    servers: [
+        {
+            url: "http://localhost:3000",
+            description: "Development server",
+        },
+    ],
 };
 
 const options = {
-    swaggerDefinition,
-    apis: ["./routes/*.js"], // Make sure this path is correct relative to your project root
+    definition: swaggerDefinition,
+    apis: [join(__dirname, "../routes/*.js")],
 };
 
 const swaggerSpec = swaggerJSDoc(options);
@@ -33,28 +35,5 @@ export function swaggerDocs(app) {
     console.log(`Swagger docs available at http://localhost:3000/api-docs`);
 }
 
-// console.log("swagger.js");
 
-// import swaggerUi from "swagger-ui-express";
-// import swaggerJSDoc from "swagger-jsdoc";
 
-// const swaggerDefinition = {
-//     openapi: "3.0.0",
-//     info: {
-//         title: "IBM Ride App",
-//         version: "1.0.0",
-//         description: "API documentation with Swagger UI",
-//     },
-//     servers: [{ url: "http://localhost:3000" }],
-// };
-
-// const options = {
-//     swaggerDefinition,
-//     apis: ["./routes/*.js"],
-// };
-
-// const swaggerSpec = swaggerJSDoc(options);
-
-// export function swaggerDocs(app) {
-//     app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-// }

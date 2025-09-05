@@ -193,3 +193,4 @@ export default router;
 // // router.get("/ride/:rideId", getRatingByIdsByRide);
 
 // // export default router;
+
