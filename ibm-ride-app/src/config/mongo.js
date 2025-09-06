@@ -1,18 +1,16 @@
 console.log("mongo.js");
 
 import mongoose from "mongoose";
-import dotenv from "dotenv";
-
-dotenv.config();
+import config from "./envConfig.js";
 
 async function connectToDatabase() {
     try {
-        await mongoose.connect(process.env.MONGO_URI, {
-            dbName: process.env.MONGO_DB_NAME,
+        await mongoose.connect(config.mongo.uri, {
+            dbName: config.mongo.dbName,
         });
-        console.log('Connected to MongoDB');
+        console.log("Connected to MongoDB:", config.mongo.dbName);
     } catch (error) {
-        console.error('MongoDB connection error:', error);
+        console.error("MongoDB connection error:", error.message);
     }
 }
 
@@ -20,20 +18,4 @@ connectToDatabase();
 
 export default mongoose;
 
-// console.log("mongo.js");
-
-// import mongoose from "mongoose";
-// import dotenv from "dotenv";
-
-// dotenv.config();
-
-// await mongoose.connect(process.env.MONGO_URI, {
-//     dbName: process.env.MONGO_DB_NAME,
-// });
-
-// mongoose.connection.on('connected', () => {
-//     console.log('Mongoose connected to MongoDB');
-// });
-
-// export default mongoose;
 

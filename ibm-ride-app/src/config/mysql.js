@@ -1,16 +1,21 @@
 console.log("mysql.js");
 
 import mysql from "mysql2/promise";
-import dotenv from "dotenv";
-
-dotenv.config();
+import config from "./envConfig.js";
 
 const pool = mysql.createPool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
+  host: config.mysql.host,
+  user: config.mysql.user,
+  password: config.mysql.password,
+  database: config.mysql.database,
 });
 
-export default pool;
+pool.getConnection()
+  .then(() => {
+    console.log("Connected to MySQL:", config.mysql.database);
+  })
+  .catch((err) => {
+    console.error("MySQL connection error:", err.message);
+  });
 
+export default pool;

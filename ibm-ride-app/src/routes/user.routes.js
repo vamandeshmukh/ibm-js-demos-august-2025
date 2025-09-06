@@ -1,12 +1,79 @@
 console.log("user.routes.js");
 
 import { Router } from "express";
-import { getUser } from "../controllers/user.controller.js";
+import { getAllUsers, getUserById, createUser } from "../controllers/user.controller.js";
 
 const router = Router();
 
-router.get("/:id", getUser);
+/**
+ * @swagger
+ * /api/users:
+ *   get:
+ *     summary: Get all users
+ *     tags: [Users]
+ *     responses:
+ *       200:
+ *         description: List of all users
+ */
+router.get("/", getAllUsers);
+
+/**
+ * @swagger
+ * /api/users/{id}:
+ *   get:
+ *     summary: Get a user by ID
+ *     tags: [Users]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: User ID
+ *     responses:
+ *       200:
+ *         description: User details
+ *       404:
+ *         description: User not found
+ */
+router.get("/:id", getUserById);
+
+/**
+ * @swagger
+ * /api/users:
+ *   post:
+ *     summary: Create a new user
+ *     tags: [Users]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - name
+ *               - email
+ *             properties:
+ *               name:
+ *                 type: string
+ *                 description: The user's full name
+ *               email:
+ *                 type: string
+ *                 format: email
+ *                 description: The user's email address
+ *               phone:
+ *                 type: number
+ *                 description: The user's phone number
+ *               role:
+ *                 type: string
+ *                 format: string
+ *                 description: The user's role (rider, driver, admin)
+ *     responses:
+ *       201:
+ *         description: User created successfully
+ *       400:
+ *         description: Invalid input
+ */
+router.post("/", createUser);
 
 export default router;
-
-
