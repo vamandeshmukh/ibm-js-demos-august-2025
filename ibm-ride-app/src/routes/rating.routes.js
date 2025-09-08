@@ -2,6 +2,7 @@ console.log("rating.routes.js");
 
 import { Router } from "express";
 import { createRating, getRatingById, getAllRatings, getRatingByIdsByRide } from "../controllers/rating.controller.js";
+import { authenticateToken, authorizeRoles } from "../middlewares/authMiddleware.js";
 
 const router = Router();
 
@@ -42,7 +43,7 @@ const router = Router();
  *       400:
  *         description: Invalid input
  */
-router.post("/", createRating);
+router.post("/", authenticateToken, authorizeRoles("rider"), createRating);
 
 /**
  * @swagger
@@ -99,4 +100,5 @@ router.get("/", getAllRatings);
 router.get("/ride/:rideId", getRatingByIdsByRide);
 
 export default router;
+
 

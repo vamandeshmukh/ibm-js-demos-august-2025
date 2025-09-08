@@ -1,7 +1,7 @@
 console.log("user.routes.js");
 
 import { Router } from "express";
-import { getAllUsers, getUserById, createUser } from "../controllers/user.controller.js";
+import { getAllUsers, getUserById, register, login } from "../controllers/user.controller.js";
 
 const router = Router();
 
@@ -40,9 +40,9 @@ router.get("/:id", getUserById);
 
 /**
  * @swagger
- * /api/users:
+ * /api/users/register:
  *   post:
- *     summary: Create a new user
+ *     summary: Register a new user
  *     tags: [Users]
  *     requestBody:
  *       required: true
@@ -74,6 +74,36 @@ router.get("/:id", getUserById);
  *       400:
  *         description: Invalid input
  */
-router.post("/", createUser);
+router.post("/register", register);
+
+/**
+ * @swagger
+ * /api/users/login:
+ *   post:
+ *     summary: Login a user
+ *     tags: [Users]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - email
+ *               - password
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 format: email
+ *               password:
+ *                 type: string
+ *                 format: password
+ *     responses:
+ *       200:
+ *         description: Login successful, returns JWT
+ *       401:
+ *         description: Invalid credentials
+ */
+router.post("/login", login);
 
 export default router;

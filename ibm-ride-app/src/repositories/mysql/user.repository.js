@@ -25,10 +25,10 @@ export default class UserRepository {
 
   create = async (userData) => {
     console.log("Repository: create", userData);
-    const { name, email, phone, role } = userData;
+    const { name, email, phone, role, password } = userData;
     const [result] = await pool.query(
-      "INSERT INTO users (name, email, phone, role) VALUES (?, ?, ?, ?)",
-      [name, email, phone, role]
+      "INSERT INTO users (name, email, phone, role, password) VALUES (?, ?, ?, ?, ?)",
+      [name, email, phone, role, password]
     );
 
     return new UserEntity({
@@ -37,8 +37,27 @@ export default class UserRepository {
       email,
       phone,
       role,
+      password,
     });
   };
+
+  // create = async (userData) => {
+  //   console.log("Repository: create", userData);
+  //   const { name, email, phone, role } = userData;
+  //   const [result] = await pool.query(
+  //     "INSERT INTO users (name, email, phone, role) VALUES (?, ?, ?, ?)",
+  //     [name, email, phone, role]
+  //   );
+
+  //   return new UserEntity({
+  //     id: result.insertId,
+  //     name,
+  //     email,
+  //     phone,
+  //     role,
+  //   });
+  // };
+
 }
 
 

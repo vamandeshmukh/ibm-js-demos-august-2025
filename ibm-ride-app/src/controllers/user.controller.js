@@ -22,7 +22,7 @@ export const getUserById = async (req, res, next) => {
   }
 };
 
-export const createUser = async (req, res, next) => {
+export const register = async (req, res, next) => {
   try {
     const newUser = await userService.createUser(req.body);
     res.status(201).json(newUser);
@@ -30,5 +30,18 @@ export const createUser = async (req, res, next) => {
     next(err);
   }
 };
+
+export const login = async (req, res, next) => {
+  try {
+    const { email, password } = req.body;
+    const result = await userService.loginUser(email, password);
+    res.json(result);
+  } catch (err) {
+    next(err);
+  }
+};
+
+
+
 
 
