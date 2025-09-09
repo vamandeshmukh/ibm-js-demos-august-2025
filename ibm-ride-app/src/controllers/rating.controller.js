@@ -15,7 +15,7 @@ export async function createRating(req, res) {
 }
 
 export async function getRatingById(req, res) {
-    console.log(req.params.id);
+    console.log("log", req.params.id);
     try {
         const rating = await ratingService.getRatingById(req.params.id);
         if (!rating) return res.status(404).json({ error: "Rating not found" });
