@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import pool from "../../src/config/mysql.js";
 
 describe("User Controller", () => {
+
     let res;
     let next;
 
@@ -27,7 +28,9 @@ describe("User Controller", () => {
 
     describe("UserController", () => {
         it("getAllUsers", async () => {
+
             const req = {};
+            
             await getAllUsers(req, res, next);
 
             expect(res.body).toBeInstanceOf(Array);
@@ -50,6 +53,7 @@ describe("User Controller", () => {
     });
 
     describe("UserController", () => {
+
         it("getUserById", async () => {
             const testUserId = 1;
             const req = { params: { id: testUserId } };
