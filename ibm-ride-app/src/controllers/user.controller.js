@@ -13,6 +13,8 @@ export const getAllUsers = async (req, res, next) => {
   }
 };
 
+// add headers, status codes, consumes, produces, cookies, in addition to business oj=bject 
+
 export const getUserById = async (req, res, next) => {
   try {
     const user = await userService.getUserProfile(req.params.id);
@@ -33,13 +35,14 @@ export const register = async (req, res, next) => {
 
 export const login = async (req, res, next) => {
   try {
-    const { email, password } = req.body;
-    const result = await userService.loginUser(email, password);
+    // const { email, password } = req.body; // not needed 
+    const result = await userService.loginUser(req.body);
     res.json(result);
   } catch (err) {
     next(err);
   }
 };
+
 
 
 

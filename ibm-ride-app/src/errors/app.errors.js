@@ -1,4 +1,4 @@
-// // console.log("app.errors.js");
+// console.log("app.errors.js");
 
 export class NotFoundError extends Error {
 

@@ -39,7 +39,12 @@ export default class UserService {
     return newUser.toResponse();
   };
 
-  loginUser = async (email, password) => {
+  loginUser = async (user) => {
+    const { email, password } = user;
+    if (!email || !password) {
+      throw new ValidationError("Email and password are required");
+    }
+    // more errors can be added here
     const user = await userRepository.findByEmail(email);
     if (!user) throw new NotFoundError("Invalid email or password");
 
@@ -50,5 +55,6 @@ export default class UserService {
     return { token, user: user.toResponse() };
   };
 }
+
 
 
