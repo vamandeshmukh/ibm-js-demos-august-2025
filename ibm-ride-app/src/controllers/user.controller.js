@@ -1,4 +1,4 @@
-console.log("user.controller.js");
+// console.log("user.controller.js");
 
 import UserService from "../services/user.service.js";
 

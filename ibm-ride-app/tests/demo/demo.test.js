@@ -1,4 +1,4 @@
-console.log("demo.test.js");
+// console.log("demo.test.js");
 
 import { describe, it, expect } from "@jest/globals";
 
@@ -9,13 +9,20 @@ const addNums = (a, b) => {
 describe("test addNums", () => {
 
     it("Positive test case", () => {
-        expect(addNums(2, 3)).toBe(5);
+        expect(addNums(2, 2)).toBe(4);
     });
 
     it("Negative test case", () => {
-        expect(addNums(2, 3)).not.toBe(6);
+        expect(addNums(2, 2)).not.toBe(3);
     });
+
+    it("Another negative test case", () => {
+        expect(addNums(2, 2)).not.toBe(5);
+    });
+
 });
 
 
-// describe("", () => { });
+// describe("", () => { it("", () => { }); });
+
+

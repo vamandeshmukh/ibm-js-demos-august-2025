@@ -1,4 +1,4 @@
-console.log("user.service.test.js");
+// console.log("user.service.test.js");
 
 import { jest, describe, it, expect, beforeEach } from "@jest/globals";
 
@@ -13,7 +13,7 @@ jest.unstable_mockModule("../../src/repositories/mysql/user.repository.js", () =
 });
 
 const { default: UserService } = await import("../../src/services/user.service.js");
-const { default: MockedRepo, mockFindById } = await import("../../src/repositories/mysql/user.repository.js");
+const { default: _MockedRepo, mockFindById } = await import("../../src/repositories/mysql/user.repository.js");
 
 describe("UserService.getUserProfile", () => {
   let userService;

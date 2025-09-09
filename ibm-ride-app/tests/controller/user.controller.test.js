@@ -1,4 +1,4 @@
-console.log("user.controller.test.js");
+// console.log("user.controller.test.js");
 
 import { jest, describe, it, expect, beforeAll, beforeEach } from "@jest/globals";
 import express from "express";
@@ -14,7 +14,7 @@ jest.unstable_mockModule("../../src/services/user.service.js", () => {
     };
 });
 
-const { default: UserService, mockGetUserProfile } = await import("../../src/services/user.service.js");
+const { default: _UserService, mockGetUserProfile } = await import("../../src/services/user.service.js");
 const userControllerModule = await import("../../src/controllers/user.controller.js");
 
 const getUserById = userControllerModule.default || userControllerModule.getUserById;
