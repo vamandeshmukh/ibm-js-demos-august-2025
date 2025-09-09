@@ -8,7 +8,7 @@ jest.unstable_mockModule("../../src/repositories/mysql/user.repository.js", () =
     default: jest.fn().mockImplementation(() => ({
       findById: mockFindById
     })),
-    mockFindById 
+    mockFindById
   };
 });
 
@@ -47,3 +47,4 @@ describe("UserService.getUserProfile", () => {
     expect(mockFindById).toHaveBeenCalledWith(99);
   });
 });
+

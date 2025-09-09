@@ -33,17 +33,6 @@
   "jest": {
     "testMatch": [
       "**/tests/**/*.test.js"
-    ],
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "src/**/*.js",
-      "!src/**/*.test.js",
-      "!src/app.js"
-    ],
-    "coverageReporters": [
-      "text",
-      "lcov",
-      "html"
     ]
   }
 }

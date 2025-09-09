@@ -1,51 +1,85 @@
-// console.log("user.controller.test.js");
+import { getAllUsers, getUserById } from "../../src/controllers/user.controller.js";
+import mongoose from "mongoose";
+import pool from "../../src/config/mysql.js";
 
-import { jest, describe, it, expect, beforeAll, beforeEach } from "@jest/globals";
-import express from "express";
-import request from "supertest";
-
-jest.unstable_mockModule("../../src/services/user.service.js", () => {
-    const mockGetUserProfile = jest.fn();
-    return {
-        default: jest.fn().mockImplementation(() => ({
-            getUserProfile: mockGetUserProfile
-        })),
-        mockGetUserProfile
-    };
-});
-
-const { default: _UserService, mockGetUserProfile } = await import("../../src/services/user.service.js");
-const userControllerModule = await import("../../src/controllers/user.controller.js");
-
-const getUserById = userControllerModule.default || userControllerModule.getUserById;
-
-describe("UserController.getUserById", () => {
-    let app;
-
-    beforeAll(() => {
-        app = express();
-        app.use(express.json());
-
-        if (typeof getUserById === 'function') {
-            app.get("/api/users/:id", getUserById);
-        } else {
-            throw new Error('getUserById is not a function');
-        }
-    });
+describe("User Controller", () => {
+    let res;
+    let next;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        res = {
+            status: function (code) {
+                this.statusCode = code;
+                return this;
+            },
+            json: function (data) {
+                this.body = data;
+                return data;
+            }
+        };
+        next = (err) => { res.error = err; };
     });
 
-    it("should return 200 and user JSON when found", async () => {
+    afterAll(async () => {
+        await mongoose.connection.close();
+        await pool.end();
+    });
 
-        mockGetUserProfile.mockResolvedValue({ id: 1, name: "Monu" });
+    describe("UserController", () => {
+        it("getAllUsers", async () => {
+            const req = {};
+            await getAllUsers(req, res, next);
 
-        const res = await request(app).get("/api/users/1");
+            expect(res.body).toBeInstanceOf(Array);
+        });
 
-        expect(res.status).toBe(200);
-        expect(res.body).toEqual({ id: 1, name: "Monu" });
-        expect(mockGetUserProfile).toHaveBeenCalledWith(expect.any(String));
-        expect(mockGetUserProfile).toHaveBeenCalledWith("1");
+        it("getAllUsers", async () => {
+            const req = {};
+            await getAllUsers(req, res, next);
+
+            expect(res.body).toHaveLength(6);
+        });
+
+        it("getAllUsers", async () => {
+            const req = {};
+
+            await expect(getAllUsers(req, res, next))
+                .resolves
+                .not.toThrow();
+        });
+    });
+
+    describe("UserController", () => {
+        it("getUserById", async () => {
+            const testUserId = 1;
+            const req = { params: { id: testUserId } };
+
+            await getUserById(req, res, next);
+
+            expect(res.body).toBeDefined();
+            expect(res.body.id).toBe(testUserId);
+        });
+
+        it("getUserById", async () => {
+            const nonExistentId = 7;
+            const req = { params: { id: nonExistentId } };
+
+            await getUserById(req, res, next);
+
+            expect(res.body).toBeUndefined(); // Pratik
+        });
+
+        it("getUserById", async () => {
+            const testUserId = 1;
+            const req = { params: { id: testUserId } };
+
+            await getUserById(req, res, next);
+
+            expect(res.body).toEqual(
+                expect.objectContaining({
+                    id: expect.any(Number),
+                })
+            );
+        });
     });
 });

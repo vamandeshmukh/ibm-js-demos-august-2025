@@ -6,6 +6,8 @@ const addNums = (a, b) => {
     return a + b;
 }
 
+// const mock = 
+
 describe("test addNums", () => {
 
     it("Positive test case", () => {
