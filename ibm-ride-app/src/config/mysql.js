@@ -1,4 +1,4 @@
-console.log("mysql.js");
+// console.log("mysql.js");
 
 import mysql from "mysql2/promise";
 import config from "./envConfig.js";
@@ -12,7 +12,7 @@ const pool = mysql.createPool({
 
 pool.getConnection()
   .then(() => {
-    console.log("Connected to MySQL:", config.mysql.database);
+    // console.log("Connected to MySQL:", config.mysql.database);
   })
   .catch((err) => {
     console.error("MySQL connection error:", err.message);

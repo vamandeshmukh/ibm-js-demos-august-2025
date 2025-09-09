@@ -1,4 +1,4 @@
-console.log("swagger.js");
+// console.log("swagger.js");
 
 import swaggerUi from "swagger-ui-express";
 import swaggerJSDoc from "swagger-jsdoc";
@@ -35,6 +35,6 @@ const swaggerSpec = swaggerJSDoc(options);
 
 export function swaggerDocs(app) {
     app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-    console.log(`Swagger docs available at http://localhost:${PORT}/api-docs`);
+    // console.log(`Swagger docs available at http://localhost:${PORT}/api-docs`);
 }
 

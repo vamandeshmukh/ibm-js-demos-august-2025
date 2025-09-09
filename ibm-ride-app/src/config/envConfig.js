@@ -1,4 +1,4 @@
-console.log("envConfig.js");
+// console.log("envConfig.js");
 
 import dotenv from "dotenv";
 

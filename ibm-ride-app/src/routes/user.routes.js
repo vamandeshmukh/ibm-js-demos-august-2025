@@ -1,4 +1,4 @@
-console.log("user.routes.js");
+// console.log("user.routes.js");
 
 import { Router } from "express";
 import { getAllUsers, getUserById, register, login } from "../controllers/user.controller.js";

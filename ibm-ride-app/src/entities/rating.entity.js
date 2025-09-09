@@ -1,4 +1,4 @@
-console.log("rating.entity.js");
+// console.log("rating.entity.js");
 
 import mongoose from "../config/mongo.js";
 
@@ -17,6 +17,6 @@ const ratingSchema = new mongoose.Schema({
 
 const RatingModel = mongoose.model("Rating", ratingSchema, "ratings");
 
-console.log(RatingModel);
+// console.log(RatingModel);
 
 export default RatingModel;

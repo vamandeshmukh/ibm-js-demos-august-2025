@@ -1,4 +1,4 @@
-// console.log("user.service.js");
+// // console.log("user.service.js");
 
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
@@ -23,11 +23,15 @@ export default class UserService {
 
   createUser = async (userData) => {
     const { name, email, phone, role, password } = userData;
+
     if (!name || !email || !phone || !role || !password) {
       throw new ValidationError("Missing required fields: name, email, phone, role, password");
     }
 
     const existingUser = await userRepository.findByEmail(email);
+
+    // more errors can be added here
+
     if (existingUser) throw new ConflictError("User with this email already exists");
 
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -46,4 +50,5 @@ export default class UserService {
     return { token, user: user.toResponse() };
   };
 }
+
 

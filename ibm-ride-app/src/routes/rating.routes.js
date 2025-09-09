@@ -1,4 +1,4 @@
-console.log("rating.routes.js");
+// console.log("rating.routes.js");
 
 import { Router } from "express";
 import { createRating, getRatingById, getAllRatings, getRatingByIdsByRide } from "../controllers/rating.controller.js";
